@@ -1,31 +1,17 @@
-import Card from './components/Card';
+import {Routes, Route} from 'react-router-dom';
+import RandomPage from './pages/RandomPage';
+import AuthorPage from './pages/AuthorPage';
 import RandomButton from './components/RandomButton';
 import './style.scss';
-import useAsync from './useAsync';
-import {useCallback, useEffect, useState} from 'react';
-import Loading from './components/Loading';
-import Error from './components/Error';
 
 function App() {
-  const {isLoading, error, data, run} = useAsync();
-  const handleRandom = useCallback(() => {
-    run('/quotes/random');
-  }, [run]);
-
-  const handleByAuthor = useCallback(() => {
-    run('/quotes', {author: 'Alice Walker'});
-  }, [run]);
-
-  useEffect(() => handleRandom, [handleRandom]);
-
   return (
     <div className="app-container">
-      <RandomButton onClick={handleRandom} />
-      {!isLoading &&
-        data &&
-        data.map((item) => <Card data={item} onClick={handleByAuthor} />)}
-      {isLoading && <Loading />}
-      {!isLoading && error && <Error message={error} />}
+      <RandomButton />
+      <Routes>
+        <Route path="/" element={<RandomPage />} />
+        <Route path="/author/:name" element={<AuthorPage />} />
+      </Routes>
     </div>
   );
 }

@@ -5,13 +5,17 @@ import {BrowserRouter} from 'react-router-dom';
 import Fallback from './components/Fallback.tsx';
 import App from './App.tsx';
 import './global.scss';
+import {ContextProvider} from './Context.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ErrorBoundary fallbackRender={Fallback}>
       <BrowserRouter>
-        <App />
+        <ContextProvider>
+          <App />
+        </ContextProvider>
       </BrowserRouter>
     </ErrorBoundary>
+    ,
   </React.StrictMode>,
 );

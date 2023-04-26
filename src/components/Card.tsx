@@ -1,22 +1,15 @@
 import {Link} from 'react-router-dom';
 import {Quote} from '../types';
 
-export default function Card({
-  data,
-  onClick,
-}: {
-  data: Quote;
-  onClick: () => void;
-}) {
+export default function Card({data}: {data: Quote}) {
   return (
     <>
       <main className="card-container">
         <p className="quote">{data.quoteText}</p>
         <Link
-          to="/author"
+          to={`/author/${data.quoteAuthor}`}
           role="button"
           className="info-container"
-          onClick={onClick}
         >
           <div className="info">
             <p className="autor">{data.quoteAuthor}</p>
