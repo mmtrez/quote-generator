@@ -1,5 +1,4 @@
 import spinner from '../assets/loading.gif';
-import './Loading.scss';
 
 export default function Loading() {
   return (

@@ -1,5 +1,3 @@
-import './RandomButton.scss';
-
 export default function RandomButton({onClick}: {onClick: () => void}) {
   return (
     <button type="button" className="random-button" onClick={onClick}>

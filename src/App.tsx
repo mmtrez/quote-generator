@@ -1,6 +1,6 @@
 import Card from './components/Card';
 import RandomButton from './components/RandomButton';
-import './App.scss';
+import './style.scss';
 import useAsync from './useAsync';
 import {useCallback, useEffect, useState} from 'react';
 import Loading from './components/Loading';

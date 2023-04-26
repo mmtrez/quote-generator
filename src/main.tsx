@@ -4,7 +4,7 @@ import {ErrorBoundary} from 'react-error-boundary';
 import {BrowserRouter} from 'react-router-dom';
 import Fallback from './components/Fallback.tsx';
 import App from './App.tsx';
-import './index.css';
+import './global.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

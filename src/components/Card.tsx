@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
 import {Quote} from '../types';
-import './Card.scss';
 
 export default function Card({
   data,
