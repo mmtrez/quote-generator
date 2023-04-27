@@ -9,12 +9,8 @@ export default function RandomButton() {
   const handleGetRandom = () => {
     if (pathname !== '/') {
       navigate('/');
-    }
-    run('/quotes/random');
+    } else run('/quotes/random');
   };
-  useEffect(() => {
-    run('/quotes/random');
-  }, [run]);
   return (
     <button type="button" className="random-button" onClick={handleGetRandom}>
       random
