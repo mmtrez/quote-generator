@@ -11,14 +11,20 @@ export default function AuthorPage() {
 
   useEffect(() => {
     run(`/quotes?author=${name}`);
-    console.log('AUTHOR PAGE');
   }, [run, name]);
 
   return (
-    <>
-      {!isLoading && data && <Card data={data[0]} />}
+    <main>
+      {!isLoading && data && (
+        <>
+          <h1>{name}</h1>
+          {data.map((item, index) => (
+            <Card data={item} key={index} />
+          ))}
+        </>
+      )}
       {isLoading && <Loading />}
       {!isLoading && error && <Error message={error} />}
-    </>
+    </main>
   );
 }

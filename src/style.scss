@@ -10,31 +10,36 @@
     gap: 8px;
     color: #4f4f4f;
     font-size: 18px;
-    margin-top: 30px;
+    margin-block: 30px;
     margin-inline-start: auto;
     margin-inline-end: 100px;
     cursor: pointer;
   }
-  .card-container {
+  main {
     max-width: 720px;
-    margin: auto;
-    .quote {
-      font-size: 36px;
-      font-weight: 500;
-      position: relative;
-      padding-inline-start: 80px;
-      &::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 8px;
-        background-color: #f7df94;
-        inset-inline-start: 0;
+    margin-inline: auto;
+    margin-block: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    .card-container {
+      margin-inline: auto;
+      .quote {
+        font-size: 36px;
+        font-weight: 500;
+        position: relative;
+        padding-inline-start: 80px;
+        &::before {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 8px;
+          background-color: #f7df94;
+          inset-inline-start: 0;
+        }
       }
     }
     .info-container {
-      margin-top: 150px;
-      margin-inline-start: 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,8 +57,8 @@
         }
       }
     }
-  }
-  .loading-container {
-    margin: auto;
+    .loading-container {
+      margin: auto;
+    }
   }
 }
