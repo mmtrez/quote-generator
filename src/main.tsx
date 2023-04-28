@@ -8,13 +8,14 @@ import './global.scss';
 import {ContextProvider} from './Context.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
-  <ErrorBoundary fallbackRender={Fallback}>
-    <BrowserRouter>
-      <ContextProvider>
-        <App />
-      </ContextProvider>
-    </BrowserRouter>
-  </ErrorBoundary>,
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <ErrorBoundary fallbackRender={Fallback}>
+      <BrowserRouter>
+        <ContextProvider>
+          <App />
+        </ContextProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
+    , //{' '}
+  </React.StrictMode>,
 );

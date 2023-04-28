@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import {Quote} from '../types';
 
 export default function Card({data}: {data: Quote}) {
